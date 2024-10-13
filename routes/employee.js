@@ -1,4 +1,6 @@
 const express = require('express');
+const router = express.Router();
+const employeeController = require('../controllers/employeeController');
 const {
     getAllEmployees,
     createEmployee,
@@ -7,10 +9,8 @@ const {
     deleteEmployee
 } = require('../controllers/employeeController');
 
-const router = express.Router();
-
 // Route to get all employees
-router.get('/employees', getAllEmployees);
+router.get('/employees', employeeController.getAllEmployees);
 
 // Route to create a new employee
 router.post('/employees', createEmployee);
